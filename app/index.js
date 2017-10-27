@@ -1,15 +1,24 @@
 import React from 'react'
 import { render } from 'react-dom'
+import PropTypes from 'prop-types'
 
 import './styles/base.css'
 
-const App = () => (
+const App = ({title}) => (
   <div className="title">
-    EC React - Semana 2: React Components
+    {title}
   </div>
 )
-
+App.propTypes={
+  nombre :PropTypes.string.isRequired
+  edad :PropTypes.number.isRequired
+  hobbies :PropTypes.array
+}
 render(
-  <App />,
+  <App 
+  nombre='kenet'
+  edad ={20}
+  
+  />,
   document.getElementById('root')
 )
